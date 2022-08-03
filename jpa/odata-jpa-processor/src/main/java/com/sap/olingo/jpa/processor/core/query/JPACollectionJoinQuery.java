@@ -312,6 +312,9 @@ public class JPACollectionJoinQuery extends JPAAbstractJoinQuery {
         }
       }
     }
+    
+    whereCondition = addWhereClause(super.createWhere(uriResource, navigationInfo), createProtectionWhere(claimsProvider));
+    
     debugger.stopRuntimeMeasurement(handle);
     return whereCondition;
   }
