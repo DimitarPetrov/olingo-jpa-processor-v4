@@ -52,7 +52,7 @@ public class JPACollectionJoinQuery extends JPAAbstractJoinQuery {
       throws ODataException {
 
     super(odata, context, item.getEntityType(), requestContext,
-        requestHeaders, new ArrayList<>(item.getHops().subList(0, item.getHops().size() - 1)));
+        requestHeaders, new ArrayList<>(item.getHops().subList(item.getHops().size() - 2, item.getHops().size() - 1)));
     this.assoziation = item.getExpandAssociation();
     this.keyBoundary = keyBoundary;
   }
